@@ -23,13 +23,21 @@ const reducers = combineReducers({
   auth,
 })
 
+interface SecretKey {
+  key: string
+}
+
+const secretKey: SecretKey = {
+  key: 'my-super-secret-key',
+}
+
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   whitelist: ['theme', 'auth'],
   transforms: [
     encryptTransform({
-      secretKey: 'my-super-secret-key',
+      secretKey: secretKey.key,
       onError: function (err) {
         console.log('Redux encrypt error', err)
       },

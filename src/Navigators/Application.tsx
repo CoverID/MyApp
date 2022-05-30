@@ -8,12 +8,11 @@ import AuthNavigator from './Auth'
 
 // @refresh reset
 const ApplicationNavigator = () => {
-  const { Layout, NavigationTheme } = useTheme()
-  const { colors } = NavigationTheme
+  const { Layout } = useTheme()
   const currentAuth = useSelector((state: { auth: AuthState }) => state.auth)
 
   return (
-    <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
+    <SafeAreaView style={[Layout.fill]}>
       {currentAuth.token === '' ? <AuthNavigator /> : <TabNavigator />}
     </SafeAreaView>
   )

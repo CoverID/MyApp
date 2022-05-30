@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { useTheme } from '@/Hooks'
 import { navigationRef } from './utils'
-import { LoginScreen } from '@/Screens'
+import { LoginScreen, StartupScreen } from '@/Screens'
 
 const Stack = createStackNavigator()
 
@@ -16,7 +16,8 @@ const AuthNavigator = () => {
     <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
       <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Startup" component={LoginScreen} />
+        <Stack.Screen name="Startup" component={StartupScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

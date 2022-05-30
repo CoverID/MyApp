@@ -5,6 +5,7 @@ import { useTheme } from '@/Hooks'
 import { AuthState, logout } from '@/Store/Auth'
 import { useSelector } from 'react-redux'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { push } from '@/Navigators/utils'
 
 const HomeScreen = () => {
   const { Gutters, Layout } = useTheme()
@@ -42,11 +43,29 @@ const HomeScreen = () => {
       >
         <Text style={styles.text}>Log Out</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.buttonInstagram}
+        activeOpacity={1}
+        onPress={() => push('Instagram', {})}
+      >
+        <Text style={styles.text}>Go to Instagram</Text>
+      </TouchableOpacity>
     </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
+  buttonInstagram: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'blue',
+    marginTop: 50,
+  },
   buttonDeleteAuth: {
     alignItems: 'center',
     justifyContent: 'center',

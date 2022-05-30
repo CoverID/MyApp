@@ -1,4 +1,6 @@
 import LoginScreen from './Login'
 import HomeScreen from './Home'
+import StartupScreen from './Startup'
+import InstagramScreen from './Instagram'
 
-export { LoginScreen, HomeScreen }
+export { StartupScreen, LoginScreen, HomeScreen, InstagramScreen }

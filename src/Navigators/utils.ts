@@ -8,13 +8,21 @@ import {
   CommonActions,
   createNavigationContainerRef,
 } from '@react-navigation/native'
+import { StackActions } from '@react-navigation/native'
 
 type RootStackParamList = {
   Startup: undefined
   Home: undefined
+  Instagram: undefined
 }
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>()
+
+export function push(name: keyof RootStackParamList, params: any) {
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(StackActions.push(name, params))
+  }
+}
 
 export function navigate(name: keyof RootStackParamList, params: any) {
   if (navigationRef.isReady()) {

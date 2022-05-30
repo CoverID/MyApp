@@ -80,6 +80,7 @@ export default function ({}: ThemeVariables) {
     /* Sizes Layouts */
     fill: {
       flex: 1,
+      backgroundColor: 'white',
     },
     fullSize: {
       height: '100%',
